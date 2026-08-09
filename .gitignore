@@ -1,8 +1,7 @@
 .next
 node_modules
 out
-.open-next
-.wrangler
+dist
 *.log
 .env*
 !.env.example
