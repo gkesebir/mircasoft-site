@@ -4,25 +4,20 @@ import "./styles.css";
 
 const products = [
   {
-    name: "AI Puzzle Studio",
+    name: "Grid: Binary Puzzle",
     type: "Oyun",
     summary:
-      "Oyuncunun seçimlerine göre yeni bölümler, ipuçları ve zorluk eğrisi oluşturan yapay zeka destekli bulmaca deneyimi.",
-    status: "Yakında"
+      "Mantık yürütme odaklı, cihaz içinde çalışan ve ilerlemesini yerel olarak saklayan binary puzzle oyunu.",
+    status: "Yayında",
+    policy: "#grid-policy"
   },
   {
-    name: "Quest Maker AI",
-    type: "Uygulama",
+    name: "VoltTest",
+    type: "Araç",
     summary:
-      "Kısa fikirlerden görev akışları, karakter notları ve oyun içi metinler tasarlamaya yardımcı üretken araç.",
-    status: "Beta"
-  },
-  {
-    name: "Arcade Bot Arena",
-    type: "Oyun",
-    summary:
-      "Kendi davranış stilini öğrenen rakiplerle hızlı maçlar sunan, erişilebilir arcade savaş oyunu.",
-    status: "Geliştiriliyor"
+      "Pil sağlığı hesaplamaları ve kısa süreli stres testi sonuçlarını cihaz üzerinde işleyen yardımcı uygulama.",
+    status: "Yayında",
+    policy: "#volttest-policy"
   }
 ];
 
@@ -36,42 +31,42 @@ function App() {
         </a>
         <nav aria-label="Ana menu">
           <a href="#apps">Oyunlar</a>
-          <a href="#downloads">Indir</a>
-          <a href="#terms">Sartlar</a>
+          <a href="#downloads">İndir</a>
+          <a href="#terms">Şartlar</a>
           <a href="#privacy">Gizlilik</a>
         </nav>
       </header>
 
       <section id="top" className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Sifir kodla hazirlanan AI deneyimleri</p>
-          <h1>Mircasoft yapay zeka destekli uygulama ve oyunlari</h1>
+          <p className="eyebrow">Uygulama ve oyun geliştiricisi</p>
+          <h1>Mircasoft uygulama ve oyunları</h1>
           <p>
-            Bu sitede Mircasoft tarafindan gelistirilen oyunlar ve yardimci
-            uygulamalar hakkinda kisa bilgiler, indirme yonlendirmeleri, yasal
-            sartlar ve gizlilik politikasi yer alir.
+            Bu sitede Mircasoft tarafından geliştirilen oyunlar ve yardımcı
+            uygulamalar hakkında kısa bilgiler, indirme yönlendirmeleri, yasal
+            şartlar ve uygulama bazlı gizlilik politikaları yer alır.
           </p>
           <div className="actions">
             <a className="button primary" href="#apps">
-              Urunleri Incele
+              Ürünleri İncele
             </a>
             <a className="button secondary" href="#privacy">
-              Gizlilik Politikasi
+              Gizlilik Politikası
             </a>
           </div>
         </div>
-        <div className="hero-panel" aria-label="Mircasoft urun ozeti">
+        <div className="hero-panel" aria-label="Mircasoft ürün özeti">
           <div>
-            <span>3</span>
-            <p>aktif urun alani</p>
+            <span>2</span>
+            <p>yayındaki uygulama</p>
           </div>
           <div>
-            <span>AI</span>
-            <p>destekli icerik ve oyun akisi</p>
+            <span>0</span>
+            <p>kişisel veri toplama hedefi</p>
           </div>
           <div>
             <span>TR</span>
-            <p>Turkce bilgilendirme sayfalari</p>
+            <p>Türkçe bilgilendirme sayfaları</p>
           </div>
         </div>
       </section>
@@ -81,7 +76,7 @@ function App() {
           <p className="eyebrow">Katalog</p>
           <h2>Uygulamalar ve oyunlar</h2>
         </div>
-        <div className="product-grid">
+        <div className="product-grid compact-grid">
           {products.map((product) => (
             <article className="product-card" key={product.name}>
               <div className="card-topline">
@@ -90,7 +85,7 @@ function App() {
               </div>
               <h3>{product.name}</h3>
               <p>{product.summary}</p>
-              <a href="#downloads">Indirme bilgisi</a>
+              <a href={product.policy}>Gizlilik politikasını oku</a>
             </article>
           ))}
         </div>
@@ -98,63 +93,103 @@ function App() {
 
       <section id="downloads" className="section split">
         <div>
-          <p className="eyebrow">Indirme</p>
-          <h2>Baglantilar</h2>
+          <p className="eyebrow">İndirme</p>
+          <h2>Bağlantılar</h2>
           <p>
-            Yayindaki surumler icin resmi magaza ve dosya baglantilari bu
-            alanda listelenecektir. Baglantilar aktif oldugunda yalnizca
-            Mircasoft'un duyurdugu resmi kaynaklardan indirme yapilmalidir.
+            Yayındaki sürümler için resmi mağaza ve dosya bağlantıları bu
+            alanda listelenecektir. Bağlantılar aktif olduğunda yalnızca
+            Mircasoft'un duyurduğu resmi kaynaklardan indirme yapılmalıdır.
           </p>
         </div>
         <div className="download-list">
           <a href="#" aria-disabled="true">
-            Google Play baglantisi hazirlaniyor
+            Grid: Binary Puzzle - Google Play bağlantısı hazırlanıyor
           </a>
           <a href="#" aria-disabled="true">
-            App Store baglantisi hazirlaniyor
+            VoltTest - Google Play bağlantısı hazırlanıyor
           </a>
           <a href="#" aria-disabled="true">
-            Windows indirme baglantisi hazirlaniyor
+            Diğer platform bağlantıları hazırlanıyor
           </a>
         </div>
       </section>
 
       <section id="terms" className="section legal">
         <p className="eyebrow">Yasal</p>
-        <h2>Kullanim sartlari</h2>
+        <h2>Kullanım şartları</h2>
         <p>
-          Mircasoft urunleri eglence, uretkenlik ve deneme amacli sunulur.
-          Urunleri kullanarak yerel yasalara, platform kurallarina ve adil
-          kullanim ilkelerine uymayi kabul edersiniz.
+          Mircasoft ürünleri eğlence, üretkenlik ve deneme amaçlı sunulur.
+          Ürünleri kullanarak yerel yasalara, platform kurallarına ve adil
+          kullanım ilkelerine uymayı kabul edersiniz.
         </p>
         <p>
-          Urunlerdeki yapay zeka ciktilari hatali, eksik veya beklenmedik
-          olabilir. Kritik kararlar icin ciktilari dogrulamak kullanicinin
-          sorumlulugundadir. Mircasoft, urunleri onceden haber vermeden
-          guncelleyebilir, degistirebilir veya kaldirabilir.
+          Uygulamalardaki hesaplama, test veya oyun sonuçları bilgilendirme ve
+          deneyim amaçlıdır. Kritik kararlar için sonuçları doğrulamak
+          kullanıcının sorumluluğundadır. Mircasoft, ürünleri önceden haber
+          vermeden güncelleyebilir, değiştirebilir veya kaldırabilir.
         </p>
       </section>
 
       <section id="privacy" className="section legal">
         <p className="eyebrow">Gizlilik</p>
-        <h2>Gizlilik politikasi</h2>
+        <h2>Gizlilik politikası</h2>
         <p>
-          Mircasoft, urun deneyimini saglamak, guvenligi korumak ve hatalari
-          gidermek icin gerekli olan sinirli teknik verileri isleyebilir.
-          Indirilen uygulamalarin kendi magaza sayfalarinda ek veri kullanimi
-          ayrintilari yayinlanabilir.
+          Mircasoft uygulamalarında temel yaklaşım, kişisel verileri toplamadan
+          çalışmak ve uygulama verilerini cihaz üzerinde tutmaktır. Aşağıdaki
+          bölümlerde her uygulama için geçerli gizlilik notları yer alır.
         </p>
+        <div className="policy-list">
+          <article id="grid-policy" className="policy-card">
+            <h3>Grid: Binary Puzzle</h3>
+            <p className="updated">Son güncelleme: 19 Temmuz 2026</p>
+            <p>
+              Grid: Binary Puzzle kişisel kimlik bilgisi, cihaz tanımlayıcısı,
+              konum verisi, kullanım analitiği, rehber veya dosya erişimi
+              toplamaz, işlemez ve saklamaz.
+            </p>
+            <p>
+              Oyun ilerlemesi, ses, titreşim, tema tercihleri ve tamamlanan
+              seviye sayaçları Android SharedPreferences ile yalnızca cihazda
+              saklanır. Bu bilgiler harici sunuculara aktarılmaz.
+            </p>
+            <p>
+              Uygulamada Google Analytics, Firebase, sosyal eklenti veya harici
+              veri toplayan SDK bulunmaz. Uygulama her yaştan kullanıcı için
+              tasarlanmıştır ve çocuklardan kişisel bilgi talep etmez.
+            </p>
+          </article>
+
+          <article id="volttest-policy" className="policy-card">
+            <h3>VoltTest</h3>
+            <p className="updated">Son güncelleme: Haziran 2026</p>
+            <p>
+              VoltTest kişisel veri veya cihaz ölçümlerini harici sunuculara
+              toplamaz, depolamaz veya iletmez. Pil sağlığı hesaplamaları ve
+              stres testi sonuçları cihaz üzerinde yerel olarak işlenir.
+            </p>
+            <p>
+              Ön plan hizmeti izni, 3 dakikalık stres testinin uygulama arka
+              plandayken kesintisiz devam edebilmesi için kullanılır.
+              Bildirimler, pil testi tamamlandığında kullanıcıyı bilgilendirmek
+              için kullanılır.
+            </p>
+            <p>
+              Uygulama Google AdMob tarafından sunulan reklamlar içerebilir.
+              AdMob, kişiselleştirilmiş reklam sunmak amacıyla cihaz
+              tanımlayıcıları işleyebilir.
+            </p>
+          </article>
+        </div>
         <p>
-          Kisisel veriler, gecerli mevzuata uygun olarak ve yalnizca belirtilen
-          amaclarla kullanilir. Gizlilik talepleri ve veri konularindaki sorular
-          icin gelistirici iletisim kanali yayinlandiginda bu sayfaya
-          eklenecektir.
+          Gizlilik politikalarıyla ilgili sorularınız için Mircasoft ile
+          <a href="mailto:abonemapp@hotmail.com"> abonemapp@hotmail.com</a>
+          adresinden iletişime geçebilirsiniz.
         </p>
       </section>
 
       <footer>
         <strong>Mircasoft</strong>
-        <span>© 2026 Mircasoft. Tum haklari saklidir.</span>
+        <span>© 2026 Mircasoft. Tüm hakları saklıdır.</span>
       </footer>
     </main>
   );
