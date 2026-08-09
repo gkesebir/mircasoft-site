@@ -14,7 +14,19 @@ writeFileSync(
   serverTarget,
   `export default {
   async fetch(request, env) {
-    return env.ASSETS.fetch(request);
+    const url = new URL(request.url);
+    const assetResponse = await env.ASSETS.fetch(request);
+
+    if (assetResponse.status !== 404) {
+      return assetResponse;
+    }
+
+    if (request.method === "GET" && !url.pathname.startsWith("/assets/")) {
+      const indexUrl = new URL("/index.html", request.url);
+      return env.ASSETS.fetch(new Request(indexUrl, request));
+    }
+
+    return assetResponse;
   }
 };
 `,
