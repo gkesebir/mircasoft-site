@@ -18,6 +18,14 @@ const products = [
       "Pil sağlığı hesaplamaları ve kısa süreli stres testi sonuçlarını cihaz üzerinde işleyen yardımcı uygulama.",
     status: "Yayında",
     policy: "#volttest-policy"
+  },
+  {
+    name: "Slide Golf",
+    type: "Oyun",
+    summary:
+      "Kaydırma mekaniğiyle oynanan, ilerleme ve ayarlarını cihazda saklayan sade ve erişilebilir golf bulmaca oyunu.",
+    status: "Yayında",
+    policy: "#slide-golf-policy"
   }
 ];
 
@@ -57,8 +65,8 @@ function App() {
         </div>
         <div className="hero-panel" aria-label="Mircasoft ürün özeti">
           <div>
-            <span>2</span>
-            <p>yayındaki uygulama</p>
+            <span>3</span>
+            <p>yayındaki uygulama ve oyun</p>
           </div>
           <div>
             <span>0</span>
@@ -109,7 +117,7 @@ function App() {
             VoltTest - Google Play bağlantısı hazırlanıyor
           </a>
           <a href="#" aria-disabled="true">
-            Diğer platform bağlantıları hazırlanıyor
+            Slide Golf - Google Play bağlantısı hazırlanıyor
           </a>
         </div>
       </section>
@@ -177,6 +185,33 @@ function App() {
               Uygulama Google AdMob tarafından sunulan reklamlar içerebilir.
               AdMob, kişiselleştirilmiş reklam sunmak amacıyla cihaz
               tanımlayıcıları işleyebilir.
+            </p>
+          </article>
+
+          <article id="slide-golf-policy" className="policy-card">
+            <h3>Slide Golf</h3>
+            <p className="updated">Son güncelleme: 11 Ağustos 2026</p>
+            <p>
+              Slide Golf kişisel kimlik bilgisi, e-posta adresi, telefon
+              numarası, konum verisi, rehber, dosya veya benzeri kişisel
+              içerikleri toplamaz, işlemez ve saklamaz.
+            </p>
+            <p>
+              Oyun içi ilerleme, seviye durumu, ses ve titreşim gibi kullanıcı
+              tercihleri yalnızca cihaz üzerinde yerel olarak saklanabilir. Bu
+              bilgiler Mircasoft sunucularına veya harici bir veritabanına
+              aktarılmaz.
+            </p>
+            <p>
+              Slide Golf, temel oyun deneyimi için üçüncü taraf analitik veya
+              sosyal medya eklentisi kullanmayı hedeflemez. Uygulamanın ileride
+              reklam veya mağaza hizmetleri içeren bir sürümünde, ilgili
+              platformun kendi veri işleme şartları geçerli olabilir.
+            </p>
+            <p>
+              Uygulama çocuklardan veya yetişkinlerden kişisel bilgi talep
+              etmez. Uygulama verileri temizlendiğinde veya uygulama
+              kaldırıldığında yerel kayıtlar cihazdan silinebilir.
             </p>
           </article>
         </div>
