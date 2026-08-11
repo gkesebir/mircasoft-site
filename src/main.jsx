@@ -4,30 +4,69 @@ import "./styles.css";
 
 const products = [
   {
+    id: "grid-app",
+    policyId: "grid-policy",
+    icon: "/icons/grid.jpg",
     name: "Grid: Binary Puzzle",
-    type: "Oyun",
+    type: "Mantık Oyunu",
+    tagline: "Ateş ve su dengesinde ikili bulmaca.",
     summary:
-      "Mantık yürütme odaklı, cihaz içinde çalışan ve ilerlemesini yerel olarak saklayan binary puzzle oyunu.",
-    status: "Yayında",
-    policy: "#grid-policy"
+      "Grid: Binary Puzzle, kısa oturumlarda oynanabilen, dikkat ve mantık yürütme becerisini öne çıkaran bir mobil bulmaca oyunudur.",
+    details:
+      "Oyuncu, grid üzerindeki kuralları takip ederek doğru dizilimi bulmaya çalışır. İlerleme, tema ve ses tercihleri cihazda saklanır; oyun çevrimdışı ve sade bir deneyim hedefler.",
+    privacy:
+      "Kişisel veri, konum, cihaz tanımlayıcısı, analitik veya dosya/rehber erişimi toplanmaz.",
+    updated: "19 Temmuz 2026"
   },
   {
+    id: "volttest-app",
+    policyId: "volttest-policy",
+    icon: "/icons/volttest.png",
     name: "VoltTest",
-    type: "Araç",
+    type: "Android Araç Uygulaması",
+    tagline: "Pil sağlığı ve kısa stres testi yardımcısı.",
     summary:
-      "Pil sağlığı hesaplamaları ve kısa süreli stres testi sonuçlarını cihaz üzerinde işleyen yardımcı uygulama.",
-    status: "Yayında",
-    policy: "#volttest-policy"
+      "VoltTest, Android cihazlarda pil durumu hakkında hızlı bilgi almak ve kısa süreli stres testi yapmak için hazırlanmış bir yardımcı uygulamadır.",
+    details:
+      "Pil sağlığı hesaplamaları ve test sonuçları cihaz üzerinde işlenir. Ön plan hizmeti testin kesintisiz sürmesi, bildirim izni ise test tamamlandığında kullanıcıyı bilgilendirmek için kullanılır.",
+    privacy:
+      "Kişisel veri veya cihaz ölçümleri Mircasoft sunucularına gönderilmez. Uygulama Google AdMob reklamları içerebilir.",
+    updated: "Haziran 2026"
   },
   {
+    id: "slide-golf-app",
+    policyId: "slide-golf-policy",
+    icon: "/icons/slidegolf.png",
     name: "Slide Golf",
-    type: "Oyun",
+    type: "Golf Bulmaca Oyunu",
+    tagline: "Kaydır, planla, deliğe ulaş.",
     summary:
-      "Kaydırma mekaniğiyle oynanan, ilerleme ve ayarlarını cihazda saklayan sade ve erişilebilir golf bulmaca oyunu.",
-    status: "Yayında",
-    policy: "#slide-golf-policy"
+      "Slide Golf, basit kaydırma hareketleriyle topu hedefe ulaştırmaya çalışan, rahat tempolu bir golf bulmaca oyunudur.",
+    details:
+      "Oyun; kısa bölümler, anlaşılır kontroller ve cihazda saklanan yerel ilerleme mantığı üzerine kurulur. Amaç, karmaşık menüler yerine hızlı ve temiz bir oyun döngüsü sunmaktır.",
+    privacy:
+      "Kişisel kimlik bilgisi, e-posta, telefon, konum, rehber veya dosya içeriği toplanmaz.",
+    updated: "11 Ağustos 2026"
   }
 ];
+
+function PlatformButtons() {
+  return (
+    <div className="platform-buttons" aria-label="Platform seçenekleri">
+      <button className="platform-button android" type="button">
+        Android
+      </button>
+      <button
+        className="platform-button appstore"
+        type="button"
+        aria-disabled="true"
+        title="Yakında"
+      >
+        App Store
+      </button>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -38,188 +77,151 @@ function App() {
           <span>Mircasoft</span>
         </a>
         <nav aria-label="Ana menu">
-          <a href="#apps">Oyunlar</a>
-          <a href="#downloads">İndir</a>
-          <a href="#terms">Şartlar</a>
+          <a href="#apps">Uygulamalar</a>
           <a href="#privacy">Gizlilik</a>
+          <a href="#contact">İletişim</a>
         </nav>
       </header>
 
       <section id="top" className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Uygulama ve oyun geliştiricisi</p>
-          <h1>Mircasoft uygulama ve oyunları</h1>
+          <p className="eyebrow">Bağımsız uygulama ve oyun üreticisi</p>
+          <h1>Mircasoft mobil oyunlar ve pratik Android araçları üretir.</h1>
           <p>
-            Bu sitede Mircasoft tarafından geliştirilen oyunlar ve yardımcı
-            uygulamalar hakkında kısa bilgiler, indirme yönlendirmeleri, yasal
-            şartlar ve uygulama bazlı gizlilik politikaları yer alır.
+            Kısa sürede anlaşılabilen, cihazda çalışan ve kullanıcı gizliliğini
+            sade tutan uygulamalar geliştiriyoruz. Aşağıdaki ikonlara tıklayarak
+            her ürünün ne işe yaradığını, hangi platformda olduğunu ve gizlilik
+            politikasını görebilirsiniz.
           </p>
-          <div className="actions">
-            <a className="button primary" href="#apps">
-              Ürünleri İncele
-            </a>
-            <a className="button secondary" href="#privacy">
-              Gizlilik Politikası
-            </a>
-          </div>
         </div>
-        <div className="hero-panel" aria-label="Mircasoft ürün özeti">
-          <div>
-            <span>3</span>
-            <p>yayındaki uygulama ve oyun</p>
-          </div>
-          <div>
-            <span>0</span>
-            <p>kişisel veri toplama hedefi</p>
-          </div>
-          <div>
-            <span>TR</span>
-            <p>Türkçe bilgilendirme sayfaları</p>
-          </div>
+
+        <div className="app-dock" aria-label="Mircasoft uygulamaları">
+          {products.map((product) => (
+            <a className="dock-item" href={`#${product.id}`} key={product.name}>
+              <img src={product.icon} alt={`${product.name} ikonu`} />
+              <span>{product.name}</span>
+            </a>
+          ))}
         </div>
       </section>
 
-      <section id="apps" className="section">
+      <section id="apps" className="section apps-section">
         <div className="section-heading">
-          <p className="eyebrow">Katalog</p>
+          <p className="eyebrow">Ürünler</p>
           <h2>Uygulamalar ve oyunlar</h2>
         </div>
-        <div className="product-grid compact-grid">
+
+        <div className="showcase-list">
           {products.map((product) => (
-            <article className="product-card" key={product.name}>
-              <div className="card-topline">
-                <span>{product.type}</span>
-                <strong>{product.status}</strong>
+            <article id={product.id} className="showcase-card" key={product.name}>
+              <div className="showcase-media">
+                <img src={product.icon} alt={`${product.name} uygulama ikonu`} />
               </div>
-              <h3>{product.name}</h3>
-              <p>{product.summary}</p>
-              <a href={product.policy}>Gizlilik politikasını oku</a>
+              <div className="showcase-copy">
+                <div className="card-topline">
+                  <span>{product.type}</span>
+                  <strong>Yayında</strong>
+                </div>
+                <h3>{product.name}</h3>
+                <p className="tagline">{product.tagline}</p>
+                <p>{product.summary}</p>
+                <p>{product.details}</p>
+                <div className="showcase-actions">
+                  <PlatformButtons />
+                  <a className="text-link" href={`#${product.policyId}`}>
+                    Gizlilik politikasına git
+                  </a>
+                </div>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section id="downloads" className="section split">
-        <div>
-          <p className="eyebrow">İndirme</p>
-          <h2>Bağlantılar</h2>
-          <p>
-            Yayındaki sürümler için resmi mağaza ve dosya bağlantıları bu
-            alanda listelenecektir. Bağlantılar aktif olduğunda yalnızca
-            Mircasoft'un duyurduğu resmi kaynaklardan indirme yapılmalıdır.
-          </p>
-        </div>
-        <div className="download-list">
-          <a href="#" aria-disabled="true">
-            Grid: Binary Puzzle - Google Play bağlantısı hazırlanıyor
-          </a>
-          <a href="#" aria-disabled="true">
-            VoltTest - Google Play bağlantısı hazırlanıyor
-          </a>
-          <a href="#" aria-disabled="true">
-            Slide Golf - Google Play bağlantısı hazırlanıyor
-          </a>
-        </div>
-      </section>
-
-      <section id="terms" className="section legal">
-        <p className="eyebrow">Yasal</p>
-        <h2>Kullanım şartları</h2>
-        <p>
-          Mircasoft ürünleri eğlence, üretkenlik ve deneme amaçlı sunulur.
-          Ürünleri kullanarak yerel yasalara, platform kurallarına ve adil
-          kullanım ilkelerine uymayı kabul edersiniz.
-        </p>
-        <p>
-          Uygulamalardaki hesaplama, test veya oyun sonuçları bilgilendirme ve
-          deneyim amaçlıdır. Kritik kararlar için sonuçları doğrulamak
-          kullanıcının sorumluluğundadır. Mircasoft, ürünleri önceden haber
-          vermeden güncelleyebilir, değiştirebilir veya kaldırabilir.
-        </p>
-      </section>
-
       <section id="privacy" className="section legal">
         <p className="eyebrow">Gizlilik</p>
-        <h2>Gizlilik politikası</h2>
+        <h2>Gizlilik politikaları</h2>
         <p>
           Mircasoft uygulamalarında temel yaklaşım, kişisel verileri toplamadan
           çalışmak ve uygulama verilerini cihaz üzerinde tutmaktır. Aşağıdaki
-          bölümlerde her uygulama için geçerli gizlilik notları yer alır.
+          bağlantı adresleri korunmuştur; mevcut politika linkleri aynı şekilde
+          çalışmaya devam eder.
         </p>
+
         <div className="policy-list">
-          <article id="grid-policy" className="policy-card">
-            <h3>Grid: Binary Puzzle</h3>
-            <p className="updated">Son güncelleme: 19 Temmuz 2026</p>
-            <p>
-              Grid: Binary Puzzle kişisel kimlik bilgisi, cihaz tanımlayıcısı,
-              konum verisi, kullanım analitiği, rehber veya dosya erişimi
-              toplamaz, işlemez ve saklamaz.
-            </p>
-            <p>
-              Oyun ilerlemesi, ses, titreşim, tema tercihleri ve tamamlanan
-              seviye sayaçları Android SharedPreferences ile yalnızca cihazda
-              saklanır. Bu bilgiler harici sunuculara aktarılmaz.
-            </p>
-            <p>
-              Uygulamada Google Analytics, Firebase, sosyal eklenti veya harici
-              veri toplayan SDK bulunmaz. Uygulama her yaştan kullanıcı için
-              tasarlanmıştır ve çocuklardan kişisel bilgi talep etmez.
-            </p>
-          </article>
-
-          <article id="volttest-policy" className="policy-card">
-            <h3>VoltTest</h3>
-            <p className="updated">Son güncelleme: Haziran 2026</p>
-            <p>
-              VoltTest kişisel veri veya cihaz ölçümlerini harici sunuculara
-              toplamaz, depolamaz veya iletmez. Pil sağlığı hesaplamaları ve
-              stres testi sonuçları cihaz üzerinde yerel olarak işlenir.
-            </p>
-            <p>
-              Ön plan hizmeti izni, 3 dakikalık stres testinin uygulama arka
-              plandayken kesintisiz devam edebilmesi için kullanılır.
-              Bildirimler, pil testi tamamlandığında kullanıcıyı bilgilendirmek
-              için kullanılır.
-            </p>
-            <p>
-              Uygulama Google AdMob tarafından sunulan reklamlar içerebilir.
-              AdMob, kişiselleştirilmiş reklam sunmak amacıyla cihaz
-              tanımlayıcıları işleyebilir.
-            </p>
-          </article>
-
-          <article id="slide-golf-policy" className="policy-card">
-            <h3>Slide Golf</h3>
-            <p className="updated">Son güncelleme: 11 Ağustos 2026</p>
-            <p>
-              Slide Golf kişisel kimlik bilgisi, e-posta adresi, telefon
-              numarası, konum verisi, rehber, dosya veya benzeri kişisel
-              içerikleri toplamaz, işlemez ve saklamaz.
-            </p>
-            <p>
-              Oyun içi ilerleme, seviye durumu, ses ve titreşim gibi kullanıcı
-              tercihleri yalnızca cihaz üzerinde yerel olarak saklanabilir. Bu
-              bilgiler Mircasoft sunucularına veya harici bir veritabanına
-              aktarılmaz.
-            </p>
-            <p>
-              Slide Golf, temel oyun deneyimi için üçüncü taraf analitik veya
-              sosyal medya eklentisi kullanmayı hedeflemez. Uygulamanın ileride
-              reklam veya mağaza hizmetleri içeren bir sürümünde, ilgili
-              platformun kendi veri işleme şartları geçerli olabilir.
-            </p>
-            <p>
-              Uygulama çocuklardan veya yetişkinlerden kişisel bilgi talep
-              etmez. Uygulama verileri temizlendiğinde veya uygulama
-              kaldırıldığında yerel kayıtlar cihazdan silinebilir.
-            </p>
-          </article>
+          {products.map((product) => (
+            <article id={product.policyId} className="policy-card" key={product.policyId}>
+              <div className="policy-heading">
+                <img src={product.icon} alt="" aria-hidden="true" />
+                <div>
+                  <h3>{product.name}</h3>
+                  <p className="updated">Son güncelleme: {product.updated}</p>
+                </div>
+              </div>
+              <p>{product.privacy}</p>
+              {product.name === "Grid: Binary Puzzle" && (
+                <>
+                  <p>
+                    Oyun ilerlemesi, ses, titreşim, tema tercihleri ve
+                    tamamlanan seviye sayaçları Android SharedPreferences ile
+                    yalnızca cihazda saklanır. Bu bilgiler harici sunuculara
+                    aktarılmaz.
+                  </p>
+                  <p>
+                    Uygulamada Google Analytics, Firebase, sosyal eklenti veya
+                    harici veri toplayan SDK bulunmaz. Uygulama her yaştan
+                    kullanıcı için tasarlanmıştır ve çocuklardan kişisel bilgi
+                    talep etmez.
+                  </p>
+                </>
+              )}
+              {product.name === "VoltTest" && (
+                <>
+                  <p>
+                    Pil sağlığı hesaplamaları ve stres testi sonuçları cihaz
+                    üzerinde yerel olarak işlenir. Ön plan hizmeti ve
+                    bildirimler yalnızca test deneyimini tamamlamak için
+                    kullanılır.
+                  </p>
+                  <p>
+                    Google AdMob, kişiselleştirilmiş reklam sunmak amacıyla
+                    cihaz tanımlayıcıları işleyebilir.
+                  </p>
+                </>
+              )}
+              {product.name === "Slide Golf" && (
+                <>
+                  <p>
+                    Oyun içi ilerleme, seviye durumu, ses ve titreşim gibi
+                    kullanıcı tercihleri yalnızca cihaz üzerinde yerel olarak
+                    saklanabilir. Bu bilgiler Mircasoft sunucularına veya harici
+                    bir veritabanına aktarılmaz.
+                  </p>
+                  <p>
+                    Uygulama çocuklardan veya yetişkinlerden kişisel bilgi talep
+                    etmez. Uygulama verileri temizlendiğinde veya uygulama
+                    kaldırıldığında yerel kayıtlar cihazdan silinebilir.
+                  </p>
+                </>
+              )}
+            </article>
+          ))}
         </div>
-        <p>
-          Gizlilik politikalarıyla ilgili sorularınız için Mircasoft ile
-          <a href="mailto:abonemapp@hotmail.com"> abonemapp@hotmail.com</a>
-          adresinden iletişime geçebilirsiniz.
-        </p>
+      </section>
+
+      <section id="contact" className="section contact-section">
+        <div>
+          <p className="eyebrow">İletişim</p>
+          <h2>Mircasoft ile iletişime geçin</h2>
+          <p>
+            Uygulamalar, oyunlar, gizlilik politikaları veya destek talepleri
+            için bize e-posta gönderebilirsiniz.
+          </p>
+        </div>
+        <a className="mail-card" href="mailto:abonemapp@hotmail.com">
+          <span>E-posta gönder</span>
+          <strong>abonemapp@hotmail.com</strong>
+        </a>
       </section>
 
       <footer>
