@@ -26,6 +26,19 @@ html = html.replace(
   }
 );
 
+const embeddedImages = [
+  ["/icons/grid.jpg", "public/icons/grid.jpg", "image/jpeg"],
+  ["/icons/volttest.png", "public/icons/volttest.png", "image/png"],
+  ["/icons/slidegolf.png", "public/icons/slidegolf.png", "image/png"]
+];
+
+for (const [imagePath, sourcePath, mimeType] of embeddedImages) {
+  const image = readFileSync(join(process.cwd(), sourcePath)).toString("base64");
+  const dataUri = `data:${mimeType};base64,${image}`;
+  html = html.replaceAll(imagePath, dataUri);
+  html = html.replaceAll(imagePath.replaceAll("/", "\\/"), dataUri);
+}
+
 mkdirSync(dirname(serverTarget), { recursive: true });
 writeFileSync(
   serverTarget,
