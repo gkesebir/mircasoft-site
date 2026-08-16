@@ -29,7 +29,8 @@ html = html.replace(
 const embeddedImages = [
   ["/icons/grid.jpg", "public/icons/grid.jpg", "image/jpeg"],
   ["/icons/volttest.png", "public/icons/volttest.png", "image/png"],
-  ["/icons/slidegolf.png", "public/icons/slidegolf.png", "image/png"]
+  ["/icons/slidegolf.png", "public/icons/slidegolf.png", "image/png"],
+  ["/icons/logicloom.png", "public/icons/logicloom.png", "image/png"]
 ];
 
 for (const [imagePath, sourcePath, mimeType] of embeddedImages) {

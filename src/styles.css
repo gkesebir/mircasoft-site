@@ -74,6 +74,30 @@ nav {
   font-size: 0.95rem;
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  border-color: rgba(37, 99, 235, 0.5);
+  color: var(--blue);
+}
+
 nav a,
 .product-card a {
   text-decoration: none;
@@ -289,7 +313,7 @@ h3 {
 
 .appstore:hover::after,
 .appstore:focus-visible::after {
-  content: "Yakında";
+  content: attr(data-soon);
   position: absolute;
   left: 50%;
   bottom: calc(100% + 8px);
