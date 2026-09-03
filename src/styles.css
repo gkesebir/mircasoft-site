@@ -173,7 +173,7 @@ h3 {
 
 .app-dock {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(14px, 2vw, 22px);
 }
 
@@ -254,7 +254,11 @@ h3 {
   font-size: 0.88rem;
 }
 
-.card-topline strong {
+.card-topline strong.status-live {
+  color: var(--green);
+}
+
+.card-topline strong.status-soon {
   color: var(--amber);
 }
 
@@ -291,28 +295,44 @@ h3 {
   border-radius: 8px;
   font: inherit;
   font-weight: 850;
+  text-decoration: none;
 }
 
 .platform-button {
   border: 1px solid var(--line);
-  cursor: default;
 }
 
-.android {
+a.platform-button.android {
   border-color: var(--green);
   background: var(--green);
   color: #ffffff;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    opacity 140ms ease;
 }
 
-.appstore {
+a.platform-button.android:hover,
+a.platform-button.android:focus-visible {
+  opacity: 0.92;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+.platform-button.disabled,
+.platform-button.appstore {
   position: relative;
   border-color: #cad3df;
   background: #edf1f6;
   color: #8a97a8;
+  cursor: not-allowed;
 }
 
-.appstore:hover::after,
-.appstore:focus-visible::after {
+.platform-button.disabled:hover::after,
+.platform-button.disabled:focus-visible::after,
+.platform-button.appstore:hover::after,
+.platform-button.appstore:focus-visible::after {
   content: attr(data-soon);
   position: absolute;
   left: 50%;
@@ -324,6 +344,7 @@ h3 {
   color: #ffffff;
   font-size: 0.78rem;
   white-space: nowrap;
+  z-index: 5;
 }
 
 .text-link {

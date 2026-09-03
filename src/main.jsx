@@ -4,45 +4,14 @@ import "./styles.css";
 
 const products = [
   {
-    id: "grid-app",
-    policyId: "grid-policy",
-    icon: "/icons/grid.jpg",
-    updated: { tr: "19 Temmuz 2026", en: "July 19, 2026" },
-    tr: {
-      name: "Grid: Binary Puzzle",
-      type: "Mantık Oyunu",
-      tagline: "Ateş ve su dengesinde ikili bulmaca.",
-      summary:
-        "Grid: Binary Puzzle, kısa oturumlarda oynanabilen, dikkat ve mantık yürütme becerisini öne çıkaran bir mobil bulmaca oyunudur.",
-      details:
-        "Oyuncu, grid üzerindeki kuralları takip ederek doğru dizilimi bulmaya çalışır. İlerleme, tema ve ses tercihleri cihazda saklanır; oyun çevrimdışı ve sade bir deneyim hedefler.",
-      privacy:
-        "Kişisel veri, konum, cihaz tanımlayıcısı, analitik veya dosya/rehber erişimi toplanmaz.",
-      extra: [
-        "Oyun ilerlemesi, ses, titreşim, tema tercihleri ve tamamlanan seviye sayaçları Android SharedPreferences ile yalnızca cihazda saklanır. Bu bilgiler harici sunuculara aktarılmaz.",
-        "Uygulamada Google Analytics, Firebase, sosyal eklenti veya harici veri toplayan SDK bulunmaz. Uygulama her yaştan kullanıcı için tasarlanmıştır ve çocuklardan kişisel bilgi talep etmez."
-      ]
-    },
-    en: {
-      name: "Grid: Binary Puzzle",
-      type: "Logic Game",
-      tagline: "A binary puzzle balanced between fire and water.",
-      summary:
-        "Grid: Binary Puzzle is a mobile puzzle game built for short sessions that puts focus and logical reasoning front and center.",
-      details:
-        "Players follow the rules on the grid to find the correct arrangement. Progress, theme, and sound preferences are stored on the device; the game aims for a simple, offline experience.",
-      privacy:
-        "No personal data, location, device identifiers, analytics, or file/contacts access is collected.",
-      extra: [
-        "Game progress, sound, vibration, theme preferences, and completed-level counters are stored only on the device via Android SharedPreferences. This information is never transmitted to external servers.",
-        "The app contains no Google Analytics, Firebase, social plugins, or third-party data-collecting SDKs. It is designed for users of all ages and does not request personal information from children."
-      ]
-    }
-  },
-  {
     id: "volttest-app",
     policyId: "volttest-policy",
     icon: "/icons/volttest.png",
+    isLive: true,
+    links: {
+      android: "https://play.google.com/store/apps/details?id=com.volttest.batteryhealthbenchmark",
+      appStore: null
+    },
     updated: { tr: "Haziran 2026", en: "June 2026" },
     tr: {
       name: "VoltTest",
@@ -76,45 +45,14 @@ const products = [
     }
   },
   {
-    id: "slide-golf-app",
-    policyId: "slide-golf-policy",
-    icon: "/icons/slidegolf.png",
-    updated: { tr: "11 Ağustos 2026", en: "August 11, 2026" },
-    tr: {
-      name: "Slide Golf",
-      type: "Golf Bulmaca Oyunu",
-      tagline: "Kaydır, planla, deliğe ulaş.",
-      summary:
-        "Slide Golf, basit kaydırma hareketleriyle topu hedefe ulaştırmaya çalışan, rahat tempolu bir golf bulmaca oyunudur.",
-      details:
-        "Oyun; kısa bölümler, anlaşılır kontroller ve cihazda saklanan yerel ilerleme mantığı üzerine kurulur. Amaç, karmaşık menüler yerine hızlı ve temiz bir oyun döngüsü sunmaktır.",
-      privacy:
-        "Kişisel kimlik bilgisi, e-posta, telefon, konum, rehber veya dosya içeriği toplanmaz.",
-      extra: [
-        "Oyun içi ilerleme, seviye durumu, ses ve titreşim gibi kullanıcı tercihleri yalnızca cihaz üzerinde yerel olarak saklanabilir. Bu bilgiler Mircasoft sunucularına veya harici bir veritabanına aktarılmaz.",
-        "Uygulama çocuklardan veya yetişkinlerden kişisel bilgi talep etmez. Uygulama verileri temizlendiğinde veya uygulama kaldırıldığında yerel kayıtlar cihazdan silinebilir."
-      ]
-    },
-    en: {
-      name: "Slide Golf",
-      type: "Golf Puzzle Game",
-      tagline: "Slide, plan, reach the hole.",
-      summary:
-        "Slide Golf is a relaxed-pace golf puzzle game where you guide the ball to the target with simple slide moves.",
-      details:
-        "The game is built around short levels, clear controls, and locally stored progress logic. The goal is a fast, clean play loop rather than complex menus.",
-      privacy:
-        "No personal identity information, email, phone number, location, contacts, or file content is collected.",
-      extra: [
-        "In-game progress, level state, and user preferences such as sound and vibration may be stored locally on the device only. This information is not transmitted to Mircasoft servers or any external database.",
-        "The app does not request personal information from children or adults. Local records may be deleted from the device when app data is cleared or the app is uninstalled."
-      ]
-    }
-  },
-  {
     id: "logic-loom-app",
     policyId: "logic-loom-policy",
     icon: "/icons/logicloom.png",
+    isLive: false,
+    links: {
+      android: null,
+      appStore: null
+    },
     updated: { tr: "16 Ağustos 2026", en: "August 16, 2026" },
     tr: {
       name: "Logic Loom: Bulmaca Oyunları",
@@ -228,21 +166,49 @@ const strings = {
   }
 };
 
-function PlatformButtons({ t }) {
+function PlatformButtons({ t, links }) {
   return (
     <div className="platform-buttons" aria-label={`${t.android} / ${t.appStore}`}>
-      <button className="platform-button android" type="button">
-        {t.android}
-      </button>
-      <button
-        className="platform-button appstore"
-        type="button"
-        aria-disabled="true"
-        title={t.comingSoon}
-        data-soon={t.comingSoon}
-      >
-        {t.appStore}
-      </button>
+      {links?.android ? (
+        <a
+          className="platform-button android active"
+          href={links.android}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.android}
+        </a>
+      ) : (
+        <button
+          className="platform-button android disabled"
+          type="button"
+          aria-disabled="true"
+          title={t.comingSoon}
+          data-soon={t.comingSoon}
+        >
+          {t.android}
+        </button>
+      )}
+      {links?.appStore ? (
+        <a
+          className="platform-button appstore active"
+          href={links.appStore}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.appStore}
+        </a>
+      ) : (
+        <button
+          className="platform-button appstore"
+          type="button"
+          aria-disabled="true"
+          title={t.comingSoon}
+          data-soon={t.comingSoon}
+        >
+          {t.appStore}
+        </button>
+      )}
     </div>
   );
 }
@@ -312,14 +278,16 @@ function App() {
               <div className="showcase-copy">
                 <div className="card-topline">
                   <span>{product[lang].type}</span>
-                  <strong>{t.live}</strong>
+                  <strong className={product.isLive ? "status-live" : "status-soon"}>
+                    {product.isLive ? t.live : t.comingSoon}
+                  </strong>
                 </div>
                 <h3>{product[lang].name}</h3>
                 <p className="tagline">{product[lang].tagline}</p>
                 <p>{product[lang].summary}</p>
                 <p>{product[lang].details}</p>
                 <div className="showcase-actions">
-                  <PlatformButtons t={t} />
+                  <PlatformButtons t={t} links={product.links} />
                   <a className="text-link" href={`#${product.policyId}`}>
                     {t.goToPolicy}
                   </a>
