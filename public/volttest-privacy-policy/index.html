@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - VoltTest</title>
+    <meta name="description" content="Privacy Policy for VoltTest: 90s Fast Battery Test by Mircasoft.">
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --heading-color: #58a6ff;
+            --accent-color: #2ea043;
+            --border-color: #30363d;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+        }
+        h1 {
+            color: var(--heading-color);
+            font-size: 28px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h2 {
+            color: var(--heading-color);
+            font-size: 20px;
+            margin-top: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 16px;
+            color: #f0f6fc;
+        }
+        p, li {
+            font-size: 15px;
+        }
+        ul {
+            padding-left: 24px;
+        }
+        .highlight-box {
+            background-color: rgba(46, 160, 67, 0.15);
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin: 16px 0;
+        }
+        .meta-info {
+            font-size: 13px;
+            color: #8b949e;
+            margin-bottom: 20px;
+        }
+        a {
+            color: var(--heading-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy for VoltTest</h1>
+        <div class="meta-info">
+            <strong>Application:</strong> VoltTest: 90s Fast Battery Test<br>
+            <strong>Developer / Brand:</strong> Mircasoft (<a href="https://mircasoft.com">https://mircasoft.com</a>)<br>
+            <strong>Last Updated:</strong> September 3, 2026
+        </div>
+
+        <div class="highlight-box">
+            <strong>Summary:</strong> VoltTest is built with a 100% on-device local privacy approach. Your hardware benchmark measurements, battery telemetry curves, and test history are processed exclusively on your device and are never sent to external servers.
+        </div>
+
+        <h2>1. Information We Collect & How It Is Used</h2>
+        
+        <h3>A. Hardware & Battery Telemetry (Processed Locally Only)</h3>
+        <p>During the 90-second benchmark test, VoltTest accesses real-time hardware telemetry from Android system services (<code>BatteryManager</code>, <code>ActivityManager</code>, <code>StatFs</code>, <code>TrafficStats</code>):</p>
+        <ul>
+            <li><strong>Battery Telemetry:</strong> Voltage (mV), temperature (&deg;C), instantaneous amperage (mA), battery level percentage, and charging state.</li>
+            <li><strong>Hardware Metrics:</strong> CPU load percentage, RAM usage, storage availability, and network throughput rate.</li>
+        </ul>
+        <p><strong>Purpose:</strong> To calculate your battery voltage stability score, thermal dissipation curve, and save historical benchmark trends on your device.<br>
+        <strong>Storage:</strong> Stored strictly in local device storage (<code>SharedPreferences</code>). This data is never transmitted to any third party or remote server.</p>
+
+        <h3>B. Diagnostics and Crash Reporting (Third-Party SDKs)</h3>
+        <p>To ensure app stability and diagnose runtime crashes across diverse Android hardware configurations, we use trusted Google Firebase services:</p>
+        <ul>
+            <li><strong>Google Firebase Crashlytics:</strong> Collects anonymous stack traces, device model, operating system version, and crash timestamp when an unexpected application error occurs.</li>
+            <li><strong>Google Firebase Analytics:</strong> Collects basic aggregate, non-personally identifiable app open and benchmark completion statistics to help improve application reliability.</li>
+        </ul>
+        <p>These services operate under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and data is encrypted in transit using industry-standard HTTPS/TLS.</p>
+
+        <h2>2. Data We Do NOT Collect</h2>
+        <ul>
+            <li>No personal identity information (Name, Email, Phone number, Address).</li>
+            <li>No location data (GPS or coarse location).</li>
+            <li>No user accounts, credentials, or contacts.</li>
+            <li>No photos, media, files, or sensitive hardware identifiers (IMEI, MAC Address).</li>
+        </ul>
+
+        <h2>3. Device Permissions & Purpose</h2>
+        <ul>
+            <li><code>WAKE_LOCK</code>: Keeps CPU active during the 60-second stress phase so background throttling does not distort benchmark accuracy.</li>
+            <li><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_SPECIAL_USE</code>: Ensures the benchmark diagnostic service is not terminated by Android battery optimization while running.</li>
+            <li><code>POST_NOTIFICATIONS</code> (Android 13+): Notifies you when a 90-second benchmark is completed and provides periodic test reminders if enabled.</li>
+            <li><code>RECEIVE_BOOT_COMPLETED</code>: Re-schedules periodic battery health check reminders following device restart.</li>
+        </ul>
+
+        <h2>4. Data Retention and Deletion</h2>
+        <p>All test history and preferences are stored exclusively on your device. You can permanently delete all stored benchmark records at any time directly within the app (Settings / History clear option) or by clearing the app data / uninstalling the app from Android Settings.</p>
+
+        <h2>5. Children's Privacy</h2>
+        <p>VoltTest does not address anyone under the age of 13 and does not knowingly collect personally identifiable information from children.</p>
+
+        <h2>6. Security</h2>
+        <p>We value your trust in providing your device with local diagnostics. All diagnostic transmission to Firebase is encrypted using modern TLS/HTTPS encryption protocols.</p>
+
+        <h2>7. Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy periodically. Any modifications will be posted directly to this URL with an updated revision date.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>If you have any questions or suggestions regarding our Privacy Policy, please contact us at:</p>
+        <ul>
+            <li><strong>Developer:</strong> Mircasoft</li>
+            <li><strong>Website:</strong> <a href="https://mircasoft.com">https://mircasoft.com</a></li>
+            <li><strong>Email:</strong> <a href="mailto:contact@mircasoft.com">contact@mircasoft.com</a></li>
+        </ul>
+    </div>
+</body>
+</html>
