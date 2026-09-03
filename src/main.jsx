@@ -12,7 +12,7 @@ const products = [
       android: "https://play.google.com/store/apps/details?id=com.volttest.batteryhealthbenchmark",
       appStore: null
     },
-    updated: { tr: "Haziran 2026", en: "June 2026" },
+    updated: { tr: "17 Ağustos 2026", en: "August 17, 2026" },
     tr: {
       name: "VoltTest",
       type: "Android Araç Uygulaması",
@@ -53,7 +53,7 @@ const products = [
       android: null,
       appStore: null
     },
-    updated: { tr: "16 Ağustos 2026", en: "August 16, 2026" },
+    updated: { tr: "31 Ağustos 2026", en: "August 31, 2026" },
     tr: {
       name: "Logic Loom: Bulmaca Oyunları",
       type: "Bulmaca Oyunu Koleksiyonu",
