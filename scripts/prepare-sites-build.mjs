@@ -47,7 +47,7 @@ writeFileSync(
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname.startsWith("/icons/") || url.pathname.startsWith("/assets/") || url.pathname.startsWith("/volttest-privacy-policy")) {
+    if (url.pathname.startsWith("/icons/") || url.pathname.startsWith("/assets/") || url.pathname.startsWith("/volttest-privacy-policy") || url.pathname.startsWith("/volttest-gizlilik-politikasi")) {
       return env.ASSETS.fetch(request);
     }
 
